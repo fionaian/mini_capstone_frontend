@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="container home">
     <h1>New Product</h1>
     Name:
     <input v-model="name" type="text" />
