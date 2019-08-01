@@ -1,17 +1,5 @@
 <template>
   <div class="container home">
-    <h1>New Product</h1>
-    Name:
-    <input v-model="name" type="text" />
-    Supplier:
-    <input v-model="supplier" type="text" />
-    Price:
-    <input v-model="price" type="text" />
-    Description:
-    <input v-model="description" type="text" />
-    Image URL:
-    <input v-model="imageUrl" type="text" />
-    <button v-on:click="createProduct()">Create</button>
     <h1>{{ message }}</h1>
     <div v-for="product in products">
       <h2>{{ product.name }}</h2>
@@ -52,12 +40,7 @@ export default {
     return {
       message: "THE S N A C K SHOP!",
       products: [],
-      currentProduct: {},
-      name: "",
-      supplier: "",
-      price: "",
-      description: "",
-      imageUrl: ""
+      currentProduct: {}
     };
   },
   created: function() {
@@ -67,28 +50,6 @@ export default {
     });
   },
   methods: {
-    createProduct: function() {
-      console.log("Create the product...");
-      var params = {
-        name: this.name,
-        price: this.price,
-        description: this.description,
-        supplier_id: 1,
-        image_url: this.imageUrl
-      };
-      axios
-        .post("/api/products", params)
-        .then(response => {
-          console.log("Success", response.data);
-          this.products.push(response.data);
-          this.name = "";
-          this.supplier = "";
-          this.price = "";
-          this.description = "";
-          this.imageUrl = "";
-        })
-        .catch(error => console.log(error.response));
-    },
     showProduct: function(inputProduct) {
       if (this.currentProduct === inputProduct) {
         this.currentProduct = {};
