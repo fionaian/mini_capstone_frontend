@@ -4,7 +4,8 @@
     <div v-for="product in products">
       <h2>{{ product.name }}</h2>
       <img v-bind:src="product.image_url" alt="" />
-      <div>
+      <router-link v-bind:to="`/products/${product.id}`">More info</router-link>
+      <!-- <div>
         <button v-on:click="showProduct(product)">More info</button>
       </div>
       <div v-if="product === currentProduct">
@@ -21,7 +22,7 @@
           <button v-on:click="updateProduct(product)">Update Product</button>
         </div>
         <button v-on:click="destroyProduct(product)">Delete Product</button>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -39,8 +40,7 @@ export default {
   data: function() {
     return {
       message: "THE S N A C K SHOP!",
-      products: [],
-      currentProduct: {}
+      products: []
     };
   },
   created: function() {
@@ -50,13 +50,6 @@ export default {
     });
   },
   methods: {
-    showProduct: function(inputProduct) {
-      if (this.currentProduct === inputProduct) {
-        this.currentProduct = {};
-      } else {
-        this.currentProduct = inputProduct;
-      }
-    },
     updateProduct: function(inputProduct) {
       var params = {
         name: inputProduct.name,

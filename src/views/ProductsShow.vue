@@ -1,0 +1,33 @@
+<template>
+  <div class="container show">
+    <h2>{{ product.name }}</h2>
+    <img v-bind:src="product.image_url" alt="" />
+    <p>Name: {{ product.name }}</p>
+    <p>Price: {{ product.price }}</p>
+    <p>Description: {{ product.description }}</p>
+    <router-link to="/">Back to all Products</router-link>
+  </div>
+</template>
+
+<style>
+img {
+  width: 100%;
+}
+</style>
+
+<script>
+import axios from "axios";
+export default {
+  data: function() {
+    return {
+      product: {}
+    };
+  },
+  created: function() {
+    axios.get("/api/products/" + this.$route.params.id).then(response => {
+      this.product = response.data;
+    });
+  },
+  methods: {}
+};
+</script>
