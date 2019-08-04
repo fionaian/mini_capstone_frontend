@@ -7,8 +7,9 @@
         <div class="card">
           <img v-bind:src="product.image_url" class="card-img-top" alt="..." />
           <div class="card-body">
-          <h2 class="card-name">{{ product.name }}</h2>
-          <router-link v-bind:to="`/products/${product.id}`">More info</router-link>
+            <h2 class="card-name">{{ product.name }}</h2>
+            <router-link v-bind:to="`/products/${product.id}`">More info</router-link>
+          </div>
         </div>
       </div>
     </div>

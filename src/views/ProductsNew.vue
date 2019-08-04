@@ -28,7 +28,7 @@
       </div>
       <div class="form-group">
         Image URL:
-        <input v-model="imageUrl" type="text" class="form-control" />
+        <input v-model="image_url" type="text" class="form-control" />
       </div>
       <input type="submit" value="Create" class="btn btn-primary" />
     </form>
@@ -48,7 +48,7 @@ export default {
       supplier: "",
       price: "",
       description: "",
-      imageUrl: ""
+      image_url: ""
     };
   },
   methods: {
@@ -59,7 +59,7 @@ export default {
         price: this.price,
         description: this.description,
         supplier_id: 1,
-        image_url: this.imageUrl
+        image_url: this.image_url
       };
       axios
         .post("/api/products", params)
