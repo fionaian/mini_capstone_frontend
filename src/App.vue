@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!--   <div id="nav">
       <router-link to="/">Home</router-link>
       |
       <router-link to="/about">About</router-link>
@@ -14,10 +14,10 @@
       <router-link to="/login">Login</router-link>
       |
       <router-link to="/logout">Logout</router-link>
-    </div>
+    </div> -->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Snack Shop</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -32,16 +32,22 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <!-- <li class="nav-item active">
             <a class="nav-link" href="#">
               Home
               <span class="sr-only">(current)</span>
-            </a>
+            </a> -->
+          <li class="nav-item">
+            <router-link to="/" class="nav-link">Home</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <router-link to="/products/new" class="nav-link">New Product</router-link>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item">
+            <!-- <a class="nav-link" href="#">Link</a> -->
+            <router-link to="/signup" class="nav-link">Signup</router-link>
+          </li>
+          <!--  <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
               href="#"
@@ -58,10 +64,13 @@
               <a class="dropdown-item" href="#">Another action</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+            </div> -->
+          <li class="nav-item">
+            <router-link to="/login" class="nav-link">Login</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+            <!-- <a class="nav-link disabled" href="#">Disabled</a> -->
+            <router-link to="/logout" class="nav-link">Logout</router-link>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -80,11 +89,19 @@
   color: #2c3e50;
 }
 
-#nav a.router-link-exact-active {
+/*#nav a.router-link-exact-active {
   color: #42b983;
-}
+}*/
 
 body {
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+.navbar-brand {
+  font-family: "Monoton", cursive;
+  font-size: 5em;
+}
+.navbar {
+  margin-bottom: 2rem;
 }
 </style>
